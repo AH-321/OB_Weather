@@ -7,18 +7,21 @@ import retrofit2.http.Query
 
 interface WeatherService {
 
-    // Existing method for fetching weather by city name
+    // Method for fetching weather by city name with metric units
     @GET("weather")
     fun getWeather(
         @Query("q") cityName: String,
-        @Query("appid") apiKey: String
+        @Query("appid") apiKey: String,
+        @Query("units") units: String = "metric" // Added default value for units
     ): Call<WeatherResponse>
 
-    // New method for fetching weather by coordinates (latitude and longitude)
+    // Method for fetching weather by coordinates (latitude and longitude) with metric units
     @GET("weather")
     fun getWeatherByCoordinates(
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
-        @Query("appid") apiKey: String
+        @Query("appid") apiKey: String,
+        @Query("units") units: String = "metric" // Added default value for units
     ): Call<WeatherResponse>
 }
+
