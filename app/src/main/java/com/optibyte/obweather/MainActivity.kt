@@ -38,9 +38,9 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)  // Use the XML layout
+        setContentView(R.layout.activity_main)  // Use XML layout
 
-        // Initialize views from the XML layout
+        // Initialize views from XML layout
         val locationTextView = findViewById<TextView>(R.id.locationTextView)
         val temperatureTextView = findViewById<TextView>(R.id.temperatureTextView)
         val weatherDescriptionTextView = findViewById<TextView>(R.id.weatherDescriptionTextView)
@@ -56,16 +56,16 @@ class MainActivity : ComponentActivity() {
             getLastKnownLocation()
         }
 
-        // Optionally update the UI once location is fetched
         location?.let {
-            val cityName = getCityName(it)  // Get the city name from coordinates
+            val cityName = getCityName(it)  // Get city name from coordinates
             if (cityName != null) {
                 fetchWeather(cityName) { weatherInfo ->
                     if (weatherInfo != null) {
-                        val temperature = "Temperature: ${weatherInfo.main.temp}°C"
+                        val temperature = "${weatherInfo.main.temp}°C"
                         val description = weatherInfo.weather?.get(0)?.description ?: "N/A"
+                        //val forecast = wea
 
-                        locationTextView.text = cityName  // Update with the actual city name
+                        locationTextView.text = cityName
                         temperatureTextView.text = temperature
                         weatherDescriptionTextView.text = description
                     } else {
@@ -96,8 +96,9 @@ class MainActivity : ComponentActivity() {
 
     private fun fetchWeather(cityName: String, callback: (WeatherResponse?) -> Unit) {
         val weatherService = RetrofitClient.instance.create(WeatherService::class.java)
-        val call = weatherService.getWeather(cityName, "0e8777c62f2ec2221b65684e35f7a56e") // Replace with your actual API key
+        val call = weatherService.getWeather(cityName, "0e8777c62f2ec2221b65684e35f7a56e")
 
+        // Logging request
         call.enqueue(object : Callback<WeatherResponse> {
             override fun onResponse(call: Call<WeatherResponse>, response: Response<WeatherResponse>) {
                 if (response.isSuccessful) {
@@ -117,6 +118,4 @@ class MainActivity : ComponentActivity() {
         })
     }
 }
-
-
 

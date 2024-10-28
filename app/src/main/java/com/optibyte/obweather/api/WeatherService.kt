@@ -12,7 +12,7 @@ interface WeatherService {
     fun getWeather(
         @Query("q") cityName: String,
         @Query("appid") apiKey: String,
-        @Query("units") units: String = "metric" // Added default value for units
+        @Query("units") units: String = "metric"
     ): Call<WeatherResponse>
 
     // Method for fetching weather by coordinates (latitude and longitude) with metric units
@@ -21,7 +21,7 @@ interface WeatherService {
         @Query("lat") latitude: Double,
         @Query("lon") longitude: Double,
         @Query("appid") apiKey: String,
-        @Query("units") units: String = "metric" // Added default value for units
+        @Query("units") units: String = "metric"
     ): Call<WeatherResponse>
 }
 

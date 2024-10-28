@@ -32,33 +32,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp"/>
 
-    <!-- Weather Icon ImageView -->
-    <ImageView
-        android:id="@+id/weatherIconImageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_weather"
-        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
-
-
-
-    <!-- Weather Description TextView -->
-
-    <!-- Weekly Forecast RecyclerView -->
     <TextView
         android:id="@+id/weatherDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
         android:text="Clear Sky"
         android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/weatherIconImageView" />
+        tools:layout_editor_absoluteY="149dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/forecastRecyclerView"
