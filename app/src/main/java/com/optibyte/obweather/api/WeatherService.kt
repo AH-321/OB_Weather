@@ -1,5 +1,6 @@
 package com.optibyte.obweather.api
 
+import com.optibyte.obweather.model.ForecastResponse
 import com.optibyte.obweather.model.WeatherResponse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -23,5 +24,12 @@ interface WeatherService {
         @Query("appid") apiKey: String,
         @Query("units") units: String = "metric"
     ): Call<WeatherResponse>
+
+    @GET("forecast")
+    fun getForecast(
+        @Query("q") cityName: String,
+        @Query("appid") apiKey: String,
+        @Query("units") units: String = "metric"
+    ): Call<ForecastResponse>
 }
 
