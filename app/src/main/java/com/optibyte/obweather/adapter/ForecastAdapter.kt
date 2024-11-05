@@ -14,7 +14,7 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder>
 
     fun updateData(newForecast: List<ForecastItem>) {
         forecastList = newForecast
-        notifyDataSetChanged()  // Notify RecyclerView to refresh the data
+        notifyDataSetChanged()  // Notify RecyclerView to refresh data
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ForecastViewHolder {
@@ -37,7 +37,7 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder>
         private val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
 
         fun bind(forecastItem: ForecastItem) {
-            // Format the date and set the temperature and description
+            // Format date and set temperature and description
             dateTextView.text = convertTimestampToDate(forecastItem.dt)
             temperatureTextView.text = "${forecastItem.main.temp}°C"
             descriptionTextView.text = forecastItem.weather.firstOrNull()?.description ?: "N/A"
