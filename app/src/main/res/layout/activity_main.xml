@@ -12,7 +12,7 @@
         android:id="@+id/locationTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="City, Country"
+        android:text="City"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,7 +25,7 @@
         android:id="@+id/temperatureTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="25°C"
+        android:text="--°C"
         android:textSize="60sp"
         app:layout_constraintTop_toBottomOf="@id/locationTextView"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,7 +36,7 @@
         android:id="@+id/weatherDescriptionTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clear Sky"
+        android:text="--"
         android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@id/temperatureTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,9 +48,11 @@
         android:id="@+id/forecastRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/weatherDescriptionTextView"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintTop_toBottomOf="@id/weatherDescriptionTextView"
+        app:layout_constraintVertical_bias="0.762"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
