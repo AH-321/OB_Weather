@@ -15,6 +15,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import com.optibyte.obweather.api.RetrofitClient
 import com.optibyte.obweather.api.WeatherService
@@ -30,7 +31,7 @@ import java.util.Locale
 class MainActivity : ComponentActivity() {
     private lateinit var locationManager: LocationManager
     private var location: Location? = null
-    private lateinit var ForecastAdapter: ForecastAdapter
+    private lateinit var forecastAdapter: ForecastAdapter
 
 
 
@@ -80,7 +81,7 @@ class MainActivity : ComponentActivity() {
                     }
 
                     forecastInfo?.let { forecast ->
-                        ForecastAdapter.updateData(forecast.list)  // Update adapter with forecast data
+                        forecastAdapter.updateData(forecast.list)  // Update adapter with forecast data
                     } ?: Toast.makeText(this, "Forecast data not available", Toast.LENGTH_SHORT).show()
                 }
             } else {
