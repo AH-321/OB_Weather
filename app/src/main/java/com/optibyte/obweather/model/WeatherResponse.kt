@@ -10,6 +10,7 @@ data class WeatherInfo(
     val description: String
 )
 
+
 data class Main(
     val temp: Double,
     val humidity: Int
