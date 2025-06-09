@@ -44,15 +44,24 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="149dp" />
 
+
+    <ImageView
+        android:id="@+id/weatherIcon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="163dp"
+        tools:src="@android:drawable/star_big_on" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/forecastRecyclerView"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weatherDescriptionTextView"
-        app:layout_constraintVertical_bias="0.117"
+        app:layout_constraintVertical_bias="0.251"
         tools:layout_editor_absoluteX="55dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

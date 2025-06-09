@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.optibyte.obweather.R
 import com.optibyte.obweather.model.ForecastItem
+import android.util.Log
 
 class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder>() {
 
@@ -41,13 +42,15 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder>
             dateTextView.text = convertTimestampToDate(forecastItem.dt)
             temperatureTextView.text = "${forecastItem.main.temp}°C"
             descriptionTextView.text = forecastItem.weather.firstOrNull()?.description ?: "N/A"
+            Log.d("ForecastAdapter", "API response: $forecastItem")
         }
 
         private fun convertTimestampToDate(timestamp: Long): String {
-            // Convert timestamp to date format, e.g., "Oct 29, 2024"
+            // Convert timestamp to date format
             val date = java.util.Date(timestamp * 1000)  // Convert seconds to milliseconds
-            val format = java.text.SimpleDateFormat("MMM dd, yyyy, HH,mm", java.util.Locale.getDefault())
+            val format = java.text.SimpleDateFormat("MMM dd, yyyy, HH:mm", java.util.Locale.getDefault())
             return format.format(date)
         }
+
     }
 }

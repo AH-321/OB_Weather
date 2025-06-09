@@ -12,7 +12,7 @@ android {
         minSdk = 24
         targetSdk = 34
         versionCode = 1
-        versionName = "0.2.0a"
+        versionName = "0.3.1"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -54,16 +54,20 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
 
-    implementation(platform(libs.androidx.compose.bom)) // Correct BOM declaration
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(("com.google.android.gms:play-services-location:21.0.1"))
     implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.compose.ui:ui:1.7.2") // Ensure you specify the versions explicitly
+
+    implementation("androidx.compose.ui:ui:1.7.2")
     implementation("androidx.compose.ui:ui-tooling-preview:1.7.2")
-    implementation("androidx.compose.material3:material3:1.1.1") // Ensure you have this line
+    implementation("androidx.compose.material3:material3:1.1.1")
 
     // Retrofit and Gson dependencies for networking and JSON parsing
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
