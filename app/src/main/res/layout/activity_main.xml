@@ -46,13 +46,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/forecastRecyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:paddingBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/weatherDescriptionTextView"
-        app:layout_constraintVertical_bias="0.762"
-        tools:layout_editor_absoluteX="0dp" />
+        app:layout_constraintVertical_bias="0.117"
+        tools:layout_editor_absoluteX="55dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
