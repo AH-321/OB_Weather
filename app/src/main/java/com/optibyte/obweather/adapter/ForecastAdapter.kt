@@ -48,7 +48,7 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ForecastViewHolder>
         private fun convertTimestampToDate(timestamp: Long): String {
             // Convert timestamp to date format
             val date = java.util.Date(timestamp * 1000)  // Convert seconds to milliseconds
-            val format = java.text.SimpleDateFormat("MMM dd, yyyy, HH:mm", java.util.Locale.getDefault())
+            val format = java.text.SimpleDateFormat("dd MMM, yyyy, HH:mm", java.util.Locale.getDefault())
             return format.format(date)
         }
 
